@@ -1,0 +1,9 @@
+/target/
+/.venv/
+/.idea/
+/.pytest_cache/
+/.bsp/
+/project/project/
+
+# macOS
+.DS_Store
