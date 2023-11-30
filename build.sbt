@@ -1,8 +1,10 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "2.13.12"
+ThisBuild / scalaVersion := "3.3.0"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "Advent2023"
+    name := "advent-of-code"
   )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.17" % "test"

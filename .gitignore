@@ -3,7 +3,8 @@
 /.idea/
 /.pytest_cache/
 /.bsp/
-/project/project/
+/project/*
+!/project/build.properties
 
 # macOS
 .DS_Store
