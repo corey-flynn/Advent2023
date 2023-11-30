@@ -1,0 +1,21 @@
+from src.main.python.Advent{{ YEAR }}.day_{{ DAY_NUMBER }} import part_one, part_two
+
+
+def _example_input():
+    return """
+    """
+
+
+def test_part_one():
+    actual = part_one(_example_input())
+    expected = 0  # change with actual example solution
+
+    assert actual == expected
+
+
+def test_part_two():
+    actual = part_two(_example_input())
+    expected = 0  # change with actual example solution
+
+    assert actual == expected
+

@@ -1,0 +1,24 @@
+/*
+https://adventofcode.com/{{ YEAR }}/day/{{ DAY_NUMBER|int }}
+*/
+
+package Advent{{ YEAR }}
+
+object Day{{ DAY_NUMBER }} {
+
+  def part1(input: String): Int = {
+    // Part One Logic
+  }
+
+  def part2(input: String): Int = {
+    // Part Two Logic
+  }
+
+  def main(args: Array[String]): Unit = {
+    val data: String = {
+      io.Source.fromResource("Advent{{ YEAR }}/day_{{ DAY_NUMBER }}.txt").mkString
+    }
+    println(part1(data))
+    println(part2(data))
+  }
+}
