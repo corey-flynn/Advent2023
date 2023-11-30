@@ -1,8 +1,5 @@
 /target/
-/.venv/
-/.idea/
-/.pytest_cache/
-/.bsp/
+/.*/
 /project/*
 !/project/build.properties
 
