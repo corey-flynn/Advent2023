@@ -16,7 +16,7 @@ object Day{{ DAY_NUMBER }} {
 
   def main(args: Array[String]): Unit = {
     val data: String = {
-      io.Source.fromResource("Advent{{ YEAR }}/day_{{ DAY_NUMBER }}.txt").mkString
+      io.Source.fromResource("Advent{{ YEAR }}/Day{{ DAY_NUMBER }}.txt").mkString
     }
     println(part1(data))
     println(part2(data))

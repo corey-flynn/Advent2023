@@ -25,7 +25,10 @@ if __name__ == '__main__':
     for template_file, path in TEMPLATES.items():
         template = env.get_template(template_file)
         rendered = template.render(template_vars)
-        output_path = path.format(year=year).replace('.txt', '') + template_file.replace('00', day_number)
+        output_path = (
+                path.format(year=year)
+                + template_file.replace('00', day_number).replace('.txt', '', 1)
+        )
         with open(output_path, 'w') as f:
             f.write(rendered)
             print(f'Wrote {output_path}.')

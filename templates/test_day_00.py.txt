@@ -3,7 +3,7 @@ from src.main.python.Advent{{ YEAR }}.day_{{ DAY_NUMBER }} import part_one, part
 
 def _example_input():
     return """
-    """
+    """.split('\n')
 
 
 def test_part_one():

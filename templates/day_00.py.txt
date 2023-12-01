@@ -1,22 +1,21 @@
 """
 https://adventofcode.com/{{ YEAR }}/day/{{ DAY_NUMBER|int }}
---- Day 9: Rope Bridge ---
 """
 from src.main.python.utilities import LOGGER, timing
 
 
 @timing
-def part_one(**kwargs) -> int:
+def part_one(*args, **kwargs) -> int:
     return
 
 
 @timing
-def part_two(**kwargs) -> int:
+def part_two(*args, **kwargs) -> int:
     return
 
 
 if __name__ == '__main__':
-    with open('../../resources/Advent{{ YEAR }}/day_{{ DAY_NUMBER }}.txt', 'r') as f:
-        input_ = f.read()
+    with open('../../resources/Advent{{ YEAR }}/Day{{ DAY_NUMBER }}.txt', 'r') as f:
+        input_ = f.readlines()
     LOGGER.info(part_one(input_))
     LOGGER.info(part_two(input_))
