@@ -44,5 +44,5 @@ def part_two(games) -> int:
 if __name__ == '__main__':
     with open('../../resources/Advent2023/Day02.txt', 'r') as f:
         input_ = f.readlines()
-    LOGGER.info(part_one(input_))
-    LOGGER.info(part_two(input_))
+    LOGGER.info(part_one(input_))  # 2331  // 0.0016 sec
+    LOGGER.info(part_two(input_))  # 71585 // 0.0014 sec

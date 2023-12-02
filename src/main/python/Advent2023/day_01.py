@@ -58,5 +58,5 @@ def part_two(lines) -> int:
 if __name__ == '__main__':
     with open('../../resources/Advent2023/Day01.txt', 'r') as f:
         input_ = f.readlines()
-    LOGGER.info(part_one(input_))
-    LOGGER.info(part_two(input_))
+    LOGGER.info(part_one(input_))  # 56506 // 0.0462 sec
+    LOGGER.info(part_two(input_))  # 56017 // 0.0539 sec
