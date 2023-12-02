@@ -6,12 +6,12 @@ from src.main.python.utilities import LOGGER, timing
 
 @timing
 def part_one(*args, **kwargs) -> int:
-    return
+    return 0
 
 
 @timing
 def part_two(*args, **kwargs) -> int:
-    return
+    return 0
 
 
 if __name__ == '__main__':
@@ -19,3 +19,4 @@ if __name__ == '__main__':
         input_ = f.readlines()
     LOGGER.info(part_one(input_))
     LOGGER.info(part_two(input_))
+

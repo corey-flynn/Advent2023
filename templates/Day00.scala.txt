@@ -10,12 +10,12 @@ object Day{{ DAY_NUMBER }} {
 
   def part1(input: String): Int = {
     // Part One Logic
-    1
+    0
   }
 
   def part2(input: String): Int = {
     // Part Two Logic
-    1
+    0
   }
 
   def main(args: Array[String]): Unit = {
@@ -26,3 +26,4 @@ object Day{{ DAY_NUMBER }} {
     println(Timing.timing(part2(data)))
   }
 }
+

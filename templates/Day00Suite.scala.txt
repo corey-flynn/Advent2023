@@ -3,7 +3,8 @@ package Advent{{ YEAR }}
 import org.scalatest.funsuite.AnyFunSuite
 
 class Day{{ DAY_NUMBER }}Suite extends AnyFunSuite:
-  val example: String = """
+  val example: String =
+    """
     """.stripMargin.trim
 
   test("Part 1 should be the same as the example solution.") {
@@ -13,3 +14,4 @@ class Day{{ DAY_NUMBER }}Suite extends AnyFunSuite:
   test("Part 2 should be the same as the example solution.") {
     assert(Day{{ DAY_NUMBER }}.part2(example) == 0)  // Place real example solution here
   }
+
