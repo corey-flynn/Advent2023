@@ -5,6 +5,8 @@ https://adventofcode.com/2023/day/1
 
 package Advent2023
 
+import utilities.Timing
+
 object Day01 {
 
   private val spelledDigits: Map[String, String] = Map(
@@ -53,7 +55,7 @@ object Day01 {
     val data: String = {
       io.Source.fromResource("Advent2023/Day01.txt").mkString
     }
-    println(part1(data))
-    println(part2(data))
+    println(Timing.timing(part1(data)))
+    println(Timing.timing(part2(data)))
   }
 }
