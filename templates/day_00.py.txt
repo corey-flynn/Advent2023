@@ -16,7 +16,7 @@ def part_two(*args, **kwargs) -> int:
 
 if __name__ == '__main__':
     with open('../../resources/Advent{{ YEAR }}/Day{{ DAY_NUMBER }}.txt', 'r') as f:
-        input_ = f.readlines()
+        input_ = f.read().split('\n')
     LOGGER.info(part_one(input_))
     LOGGER.info(part_two(input_))
 
