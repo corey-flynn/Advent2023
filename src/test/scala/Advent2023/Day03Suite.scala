@@ -20,5 +20,5 @@ class Day03Suite extends AnyFunSuite:
   }
 
   test("Part 2 should be the same as the example solution.") {
-    assert(Day03.part2(example) == 467_835)  // Place real example solution here
+    assert(Day03.part2(example) == 467_835)
   }
