@@ -60,25 +60,25 @@ class RangeDict(dict):
         a lot of logic here, but this finds ranges in the range dictionary
         and yields all ranges subtracted by their values. this is wildly efficient,
         but could be a little cleaner.
+
+        there was no case where there was a gap between ranges, or when the start
+        was below the lowest range but if either of those happens,
+        it'll need another bit of logic.
         """
         left_idx = bisect_left(self.sorted_stops, start)
         right_idx = bisect_right(self.sorted_starts, stop)
         ranges = self.sorted_keys[left_idx:right_idx]
         for r_start, r_stop in ranges:
+            sub = self[(r_start, r_stop)]
             if r_start <= start < r_stop and not r_start <= stop < r_stop:
-                sub = self[(r_start, r_stop)]
+                # start in range, but end isn't
                 yield start-sub, r_stop-sub
-                start = r_stop+1
-            elif not r_start <= start < r_stop and not r_start <= stop < r_stop:
-                yield start, r_stop
-                start = r_stop+1
             elif r_start <= start < r_stop and r_start <= stop < r_stop:
-                sub = self[(r_start, r_stop)]
+                # both start and stop in range
                 yield start-sub, stop-sub
-                start = r_stop+1
-            else:
-                yield start, stop
+            start = r_stop+1
         if start < stop:
+            # no more ranges, but sill have start to stop range
             yield start, stop
 
 
