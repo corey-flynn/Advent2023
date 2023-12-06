@@ -2,6 +2,7 @@ import logging
 import heapq
 import operator
 from functools import wraps
+from itertools import islice
 from time import time
 from typing import Dict, Iterable, Union
 
@@ -91,3 +92,12 @@ def manhattan_distance(point_a: Iterable[int], point_b: Iterable[int]) -> int:
 def key_by_val(d: dict, val):
     """return a dictionary key by its value"""
     return list(d.keys())[list(d.values()).index(val)]
+
+
+def batched(iterable, n):
+    # https://docs.python.org/3/library/itertools.html#itertools.batched
+    if n < 1:
+        raise ValueError('n must be at least one')
+    it = iter(iterable)
+    while batch := tuple(islice(it, n)):
+        yield batch
