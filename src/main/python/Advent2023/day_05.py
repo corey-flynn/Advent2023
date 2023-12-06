@@ -62,7 +62,7 @@ class RangeDict(dict):
         but could be a little cleaner.
 
         there was no case where there was a gap between ranges, or when the start
-        was below the lowest range but if either of those happens,
+        was below the lowest range but if either of those happen,
         it'll need another bit of logic.
         """
         left_idx = bisect_left(self.sorted_stops, start)
@@ -73,12 +73,12 @@ class RangeDict(dict):
             if r_start <= start < r_stop and not r_start <= stop < r_stop:
                 # start in range, but end isn't
                 yield start-sub, r_stop-sub
+                start = r_stop+1
             elif r_start <= start < r_stop and r_start <= stop < r_stop:
                 # both start and stop in range
                 yield start-sub, stop-sub
-            start = r_stop+1
+                start = r_stop+1
         if start < stop:
-            # no more ranges, but sill have start to stop range
             yield start, stop
 
 
