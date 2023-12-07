@@ -22,6 +22,7 @@ object Day{{ DAY_NUMBER }} {
     val data: String = {
       io.Source.fromResource("Advent{{ YEAR }}/Day{{ DAY_NUMBER }}.txt").mkString
     }
+    part1(data)
     println(Timing.timing(part1(data)))
     println(Timing.timing(part2(data)))
   }

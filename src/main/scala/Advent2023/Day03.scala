@@ -61,6 +61,7 @@ object Day03 {
 
   def main(args: Array[String]): Unit =
     val data: String = io.Source.fromResource("Advent2023/Day03.txt").mkString
-    println(Timing.timing(part1(data)))  // 528799   // 0.192861886 s
+    part1(data)
+    println(Timing.timing(part1(data)))  // 528799   // 0.024264736 s
     println(Timing.timing(part2(data)))  // 84907174 // 0.028974002 s
 }

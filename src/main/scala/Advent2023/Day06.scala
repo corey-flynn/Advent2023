@@ -47,7 +47,8 @@ object Day06 {
     val data: String = {
       io.Source.fromResource("Advent2023/Day06.txt").mkString
     }
-    println(Timing.timing(part1(data)))  // 625_968    // 0.047610786 s
+    part1(data)
+    println(Timing.timing(part1(data)))  // 625_968    // 0.000223396 s
     println(Timing.timing(part2(data)))  // 43_663_323 // 0.009269027 s
   }
 }
