@@ -3,7 +3,7 @@ https://adventofcode.com/2023/day/7
 """
 from collections import Counter
 from functools import cached_property
-from typing import Dict, Union
+from typing import Tuple, Union
 
 from src.main.python.utilities import LOGGER, timing
 
@@ -64,20 +64,20 @@ class Hand:
         return 0
 
 
-def parse(lines, wild: Union[str, bool] = False) -> Dict[str, Hand]:
+def parse(lines, wild: Union[str, bool] = False) -> Tuple[Hand]:
     d = list()
     for line in lines:
         hand, bid = line.split()
-        d.append((hand, Hand(hand=hand, bid=int(bid), wild=wild)))
-    return d
+        d.append(Hand(hand=hand, bid=int(bid), wild=wild))
+    return tuple(d)
 
 
 @timing
 def part_one(lines) -> int:
     games = parse(lines)
     return sum(
-        x[1].bid * (i + 1) for i, x in
-        enumerate(sorted(games, key=lambda x: x[1]))
+        x.bid * (i + 1) for i, x in
+        enumerate(sorted(games, key=lambda x: x))
     )
 
 
@@ -85,8 +85,8 @@ def part_one(lines) -> int:
 def part_two(lines) -> int:
     games = parse(lines, wild='J')
     return sum(
-        x[1].bid * (i + 1) for i, x in
-        enumerate(sorted(games, key=lambda x: x[1]))
+        x.bid * (i + 1) for i, x in
+        enumerate(sorted(games, key=lambda x: x))
     )
 
 
