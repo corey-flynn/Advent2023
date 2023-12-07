@@ -11,7 +11,7 @@ CARD_ORDER = 'AKQJT98765432'
 
 
 class Hand:
-    """camel poker Hand class to sort hands. and storer bids."""
+    """camel poker Hand class to sort hands. and store bids."""
     def __init__(self, hand: str, bid: int, wild: Union[str, bool] = False):
         self.hand = hand
         self.bid = bid
