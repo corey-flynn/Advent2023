@@ -112,6 +112,9 @@ def part_two(lines) -> int:
         except TypeError:
             break
         left_vals = ''.join([x for x in map_[dot_y][:dot_x]]).rsplit('O')[-1].replace('=', '')
+        # you can tell if a point is within the maze by looking at the pipes to its left.
+        # if there are an odd number of vertical bars (║, ╚╗, ╔╝), then it is enclosed,
+        # otherwise it is not.
         if not left_vals:
             dot_val = 'O'
         elif (left_vals.count('╔╝') + left_vals.count('╚╗') + left_vals.count('║')) % 2 == 1:
@@ -119,9 +122,9 @@ def part_two(lines) -> int:
         else:
             dot_val = 'O'
         map_[dot_y][dot_x] = dot_val
-    # print()
-    # for line in map_:
-    #     print(''.join(line))  # uncomment to see a pretty picture
+    print()
+    for line in map_:
+        print(''.join(line))  # uncomment to see a pretty picture
     return sum(s.count('I') for s in map_)
 
 
