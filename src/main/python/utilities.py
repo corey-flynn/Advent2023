@@ -3,6 +3,7 @@ import heapq
 import operator
 from functools import wraps
 from itertools import islice
+from math import prod
 from time import time
 from typing import Dict, Iterable, Union
 
@@ -101,3 +102,18 @@ def batched(iterable, n):
     it = iter(iterable)
     while batch := tuple(islice(it, n)):
         yield batch
+
+
+def agg_iterable(iter_one, iter_two, agg='sum'):
+    match agg:
+        case 'sum': func = operator.add
+        case 'diff': func = operator.sub
+        case 'mul': func = operator.mul
+        case 'div': func = operator.truediv
+        case _: raise NotImplemented
+    agged = map(lambda pair: func(*pair), zip(iter_one, iter_two))
+
+    if isinstance(iter_one, list):
+        return list(agged)
+    if isinstance(iter_one, tuple):
+        return tuple(agged)
