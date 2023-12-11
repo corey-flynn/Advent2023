@@ -105,6 +105,7 @@ def part_two(lines) -> int:
         [val if (i, j) in path else '.' for i, val in enumerate(line)]
         for j, line in enumerate(lines)
     ]
+    # flood fill the known outside points
     outsiders(map_, path, (0, 0))
     while True:
         try:
